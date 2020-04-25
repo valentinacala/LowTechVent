@@ -1,5 +1,4 @@
-import { ComponentProps } from "react"
-import { Container, Content, Text } from "native-base"
+import { Container, Content } from "native-base"
 import { commonStyles } from "../commonStyles"
 import React from "react"
 

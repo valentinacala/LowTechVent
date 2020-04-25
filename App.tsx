@@ -7,7 +7,6 @@ import { Provider } from 'react-redux';
 import configureStoreAndPersistor from './configureStore';
 import HomeScreen from './ts/screens/HomeScreen';
 import { ROUTES } from './ts/utils/navigationRoutes';
-import LoginScreen from './ts/screens/LoginScreen';
 
 const Stack = createStackNavigator();
 
@@ -22,7 +21,6 @@ const App = () => {
         <Stack.Navigator initialRouteName={ROUTES.HOME_SCREEN}>
 
           <Stack.Screen name={ROUTES.HOME_SCREEN} component={HomeScreen}/>
-          <Stack.Screen name={ROUTES.LOGIN_SCREEN} component={LoginScreen}/>
         
         </Stack.Navigator>
     </NavigationContainer>
