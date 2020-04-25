@@ -342,7 +342,7 @@ DEPENDENCIES:
   - Permission-PhotoLibrary (from `../node_modules/react-native-permissions/ios/PhotoLibrary.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
-  - React (from `../node_modules/react-native/`)
+  - React (from `../node_modules/react-native`)
   - React-Core (from `../node_modules/react-native/`)
   - React-Core/DevSupport (from `../node_modules/react-native/`)
   - React-Core/RCTWebSocket (from `../node_modules/react-native/`)
@@ -410,7 +410,7 @@ EXTERNAL SOURCES:
   RCTTypeSafety:
     :path: "../node_modules/react-native/Libraries/TypeSafety"
   React:
-    :path: "../node_modules/react-native/"
+    :path: "../node_modules/react-native"
   React-Core:
     :path: "../node_modules/react-native/"
   React-CoreModules:
@@ -515,6 +515,6 @@ SPEC CHECKSUMS:
   Yoga: 9db9ff2025ad21d1ac0a8b3c85d5ac4e7c29d525
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: c948e1331fc54d718681be665323a6f76ce4a4f5
+PODFILE CHECKSUM: ed7828733171964e1c6a85ca1b3f460bae74d5b7
 
 COCOAPODS: 1.9.1
