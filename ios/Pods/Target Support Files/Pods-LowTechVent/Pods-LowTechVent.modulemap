@@ -1,0 +1,6 @@
+module Pods_LowTechVent {
+  umbrella header "Pods-LowTechVent-umbrella.h"
+
+  export *
+  module * { export * }
+}

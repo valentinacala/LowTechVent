@@ -1,0 +1,6 @@
+
+export enum ROUTES {
+    "HOME_SCREEN" = "HOME_SCREEN",
+    //"CONTACT_SCREEN" = "CONTACT_SCREEN",
+    "LOGIN_SCREEN" = "LOGIN_SCREEN"
+};
