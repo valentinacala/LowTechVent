@@ -18,7 +18,7 @@ const App = () => {
     <Provider store = {store}>
       <PersistGate loading={null} persistor={persistor}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={ROUTES.HOME_SCREEN}>
+        <Stack.Navigator initialRouteName={ROUTES.HOME_SCREEN} screenOptions={{title: 'Control Panel'}}>
 
           <Stack.Screen name={ROUTES.HOME_SCREEN} component={HomeScreen}/>
         

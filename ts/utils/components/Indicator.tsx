@@ -1,4 +1,4 @@
-import { Dimensions } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import { Spacer } from "./Spacer";
 import React from "react";
 import { View, Text } from "native-base";
@@ -8,9 +8,12 @@ import { commonStyles } from "../commonStyles";
 
 type Props = Readonly<{
     initialValue?: number;
+    initialLabel?: string;
     finalValue?: number;
+    finalLabel?: string;
     unit?: string;
     delta?: number;
+    valueLabel?: string;
     title?: string
 }>;
 
@@ -38,27 +41,35 @@ export default function Indicator (props: Props){
         setProgressSize(progressSize + desiredDelta)
     }
 
-    const progressValue = (progressSize-initial)/(final-initial)/100
+    const progressValue = (progressSize-initial)/(final-initial)
 
     return(
-        <React.Fragment>
+        <View style={{padding: 4, backgroundColor: '#E1FFEB', marginTop: 16, paddingVertical: 16}}>
+                
                 <Text style={commonStyles.header}>{props.title || 'Indicator'}</Text>
+                
                 <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                    <Text>{initial}</Text>
-                    <Text>{final}</Text>
+                    <Text>{props.initialLabel || initial/100}</Text>
+                    <Text>{props.finalLabel || final/100}</Text>
                 </View>
+                
                 <Spacer/>
-                <Progress.Bar progress={progressValue} width={windowWidth-24} />
+                
+                <Progress.Bar progress={progressValue} width={windowWidth-32-8} />
+                
                 <Spacer/>
+                
                 <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                    <BaseButton title={`-${props.delta || 1}`} onPress={reduceValue} disabled={progressSize === initial}/>
+                    
+                    <BaseButton title={`-${props.valueLabel || ''}${props.delta || 1}`} onPress={reduceValue} disabled={progressSize === initial}/>
+                    
                     <View style={{flexDirection: 'column'}}>
                         <Text>Selected value:</Text>
-                        <Text style={{textAlign: 'center'}}>{`${progressSize/100}${props.unit || ''}`}</Text>
+                        <Text style={{textAlign: 'center'}}>{`${props.valueLabel || ''}${progressSize/100} ${props.unit || ''}`}</Text>
                     </View>
                     
-                    <BaseButton title={`+${props.delta || 1}`} onPress={increaseValue} disabled={progressSize === final}/>
+                    <BaseButton title={`+${props.valueLabel || ''}${props.delta || 1}`} onPress={increaseValue} disabled={progressSize === final}/>
                 </View>
-        </React.Fragment>
+        </View>
     )
 }

@@ -22,8 +22,7 @@ export const commonStyles = StyleSheet.create({
 
     header: {
         fontWeight: '700', 
-        textAlign: 'center',
-        paddingVertical: 16
+        textAlign: 'center'
     },
 
     textInput: {
