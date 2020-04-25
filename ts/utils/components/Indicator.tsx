@@ -14,15 +14,10 @@ type Props = Readonly<{
     title?: string
 }>;
 
-
 export default function Indicator (props: Props){
-
-    
-
-
-    const initial = props.initialValue || 0;
-    const final = props.finalValue || 10;
-    const desiredDelta = props.delta || 1;
+    const initial = props.initialValue ? props.initialValue * 100 : 0;
+    const final = props.finalValue ? props.finalValue * 100 : 1000;
+    const desiredDelta = props.delta ?  props.delta * 100 : 100;
 
     const[progressSize, setProgressSize] = React.useState(initial);
 
@@ -43,10 +38,7 @@ export default function Indicator (props: Props){
         setProgressSize(progressSize + desiredDelta)
     }
 
-    const getProgressValue = () => {
-
-        return (progressSize-initial)/(final-initial)
-    }
+    const progressValue = (progressSize-initial)/(final-initial)/100
 
     return(
         <React.Fragment>
@@ -56,16 +48,16 @@ export default function Indicator (props: Props){
                     <Text>{final}</Text>
                 </View>
                 <Spacer/>
-                <Progress.Bar progress={getProgressValue()} width={windowWidth-24} />
+                <Progress.Bar progress={progressValue} width={windowWidth-24} />
                 <Spacer/>
                 <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                    <BaseButton title={`-${desiredDelta}`} onPress={reduceValue} disabled={progressSize === initial}/>
+                    <BaseButton title={`-${props.delta || 1}`} onPress={reduceValue} disabled={progressSize === initial}/>
                     <View style={{flexDirection: 'column'}}>
                         <Text>Selected value:</Text>
-                        <Text style={{textAlign: 'center'}}>{`${progressSize}${props.unit || ''}`}</Text>
+                        <Text style={{textAlign: 'center'}}>{`${progressSize/100}${props.unit || ''}`}</Text>
                     </View>
                     
-                    <BaseButton title={`+${desiredDelta}`} onPress={increaseValue} disabled={progressSize === final}/>
+                    <BaseButton title={`+${props.delta || 1}`} onPress={increaseValue} disabled={progressSize === final}/>
                 </View>
         </React.Fragment>
     )
