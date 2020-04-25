@@ -2,8 +2,15 @@ import { commonStyles } from "../commonStyles"
 import React from "react"
 import { View } from "native-base"
 
-export const Spacer = () => {
+type Props = Readonly<{
+    large?: boolean
+}>
+
+export const Spacer = (props: Props) => {
+
+    const style = props.large ? commonStyles.xlSpacer : commonStyles.spacer
+
     return (
-        <View style={commonStyles.spacer}/>
+        <View style={style}/>
     )
 }

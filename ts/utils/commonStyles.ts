@@ -53,6 +53,7 @@ export const commonStyles = StyleSheet.create({
      */
 
     button: {backgroundColor: '#59A0FF', flexDirection: 'row', justifyContent: 'space-around'},
+    buttonDisabled: {backgroundColor: 'grey', flexDirection: 'row', justifyContent: 'space-around'},
     buttonText:{textAlign:'center', color: '#FFFFFF'},
 
     buttonPolice: {backgroundColor: '#FF7B1F', flexDirection: 'row', justifyContent: 'space-around'},
