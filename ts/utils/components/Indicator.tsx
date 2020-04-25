@@ -44,17 +44,13 @@ export default function Indicator (props: Props){
     const progressValue = (progressSize-initial)/(final-initial)
 
     return(
-        <View style={{padding: 4, backgroundColor: '#E1FFEB', marginTop: 16, paddingVertical: 16}}>
-                
-                <Text style={commonStyles.header}>{props.title || 'Indicator'}</Text>
+        <View style={{padding: 4, marginTop: 16, paddingVertical: 16}}>
                 
                 <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                     <Text>{props.initialLabel || initial/100}</Text>
                     <Text>{props.finalLabel || final/100}</Text>
                 </View>
-                
-                <Spacer/>
-                
+                                
                 <Progress.Bar progress={progressValue} width={windowWidth-32-8} />
                 
                 <Spacer/>
@@ -64,7 +60,7 @@ export default function Indicator (props: Props){
                     <BaseButton title={`-${props.valueLabel || ''}${props.delta || 1}`} onPress={reduceValue} disabled={progressSize === initial}/>
                     
                     <View style={{flexDirection: 'column'}}>
-                        <Text>Selected value:</Text>
+                        <Text style={commonStyles.header}>{props.title || 'Indicator'}</Text>
                         <Text style={{textAlign: 'center'}}>{`${props.valueLabel || ''}${progressSize/100} ${props.unit || ''}`}</Text>
                     </View>
                     
