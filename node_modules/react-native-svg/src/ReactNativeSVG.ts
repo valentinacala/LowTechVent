@@ -31,6 +31,7 @@ import {
   SvgWithCssUri,
   inlineStyles,
 } from './css';
+import { LocalSvg, WithLocalSvg, loadLocalRawResource } from './LocalSvg';
 import {
   RNSVGCircle,
   RNSVGClipPath,
@@ -91,6 +92,9 @@ export {
   SvgWithCss,
   SvgWithCssUri,
   inlineStyles,
+  LocalSvg,
+  WithLocalSvg,
+  loadLocalRawResource,
   Shape,
   RNSVGMarker,
   RNSVGMask,
