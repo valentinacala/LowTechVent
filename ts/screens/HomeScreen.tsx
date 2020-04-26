@@ -1,15 +1,10 @@
-import { Text, View } from 'native-base'
 import * as React from "react";
 import BaseScreenComponent from "../utils/components/BaseScreenComponent";
-import { Spacer } from "../utils/components/Spacer";
-import { useNavigation } from "@react-navigation/native";
 import Indicator from '../utils/components/Indicator';
-
-
+import SignalGenerator from '../utils/components/SignalGenerator';
 
 
 function HomeScreen() {
-    const navigation = useNavigation();
 
     return(
         <BaseScreenComponent>
@@ -46,7 +41,10 @@ function HomeScreen() {
                     initialValue={5} 
                     finalValue={35} 
                     delta={0.2}
-                />          
+                />    
+
+                <SignalGenerator duration={2000}/>
+
         </BaseScreenComponent>
     );
 }
