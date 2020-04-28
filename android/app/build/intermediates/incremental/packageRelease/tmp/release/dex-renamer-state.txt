@@ -1,0 +1,4 @@
+#Tue Apr 28 20:55:39 CEST 2020
+base.0=/Users/valentina.cala@ibm.com/Code/euvsvirus2/android/app/build/intermediates/dex/release/mergeDexRelease/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

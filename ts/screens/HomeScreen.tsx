@@ -2,6 +2,8 @@ import * as React from "react";
 import BaseScreenComponent from "../utils/components/BaseScreenComponent";
 import Indicator from '../utils/components/Indicator';
 import SignalGenerator from '../utils/components/SignalGenerator';
+import { Spacer } from "../utils/components/Spacer";
+import Chart from "../utils/components/Chart";
 
 
 function HomeScreen() {
@@ -44,6 +46,10 @@ function HomeScreen() {
                 />    
 
                 <SignalGenerator duration={2000}/>
+
+                <Spacer/>
+
+                <Chart/>
 
         </BaseScreenComponent>
     );
